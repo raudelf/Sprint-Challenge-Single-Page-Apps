@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import Card from './CharacterCard';
+import Search from './SearchForm';
 import Styled from 'styled-components';
 
 export default function CharacterList(props) {
@@ -35,6 +36,7 @@ export default function CharacterList(props) {
   return (
     <section className="character-list">
     <Title>Character List</Title>
+    <Search character={character}/>
     <CardContainer>
       {character.map((value, index) => {
         return (
