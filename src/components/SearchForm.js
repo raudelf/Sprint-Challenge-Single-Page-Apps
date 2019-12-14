@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from './CharacterCard';
+import Styled from 'styled-components';
 
 export default function SearchForm(props) {
   
@@ -19,6 +20,11 @@ export default function SearchForm(props) {
     setResult(results);
   };
   
+  let CardContainer = Styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  `;
+
   return (
     <section className="search-form">
       <form>
@@ -31,19 +37,19 @@ export default function SearchForm(props) {
           value={searchName}
         />
       </form>
-      <div>
-      {result.map((value, index) => {
-        return (
-          <Card
-            key={index}
-            name={value.name}
-            species={value.species}
-            gender={value.gender}
-            image={value.image}
-          />
-        );
-      })}
-      </div>
+      <CardContainer>
+        {result.map((value, index) => {
+          return (
+            <Card
+              key={index}
+              name={value.name}
+              species={value.species}
+              gender={value.gender}
+              image={value.image}
+            />
+          );
+        })}
+      </CardContainer>
     </section>
   );
 }
