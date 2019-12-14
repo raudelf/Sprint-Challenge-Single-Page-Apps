@@ -15,10 +15,10 @@ export default function Header() {
       <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
       <LinkContainer>
         <div className="links">
-          <Link to="/">Home</Link>
+          <Link to="/" style={{textDecoration: 'none', width: '200px', padding: '3px', backgroundColor: '#111E6C', color: 'white'}}>Home</Link>
         </div>
         <div className="links">
-          <Link to="/characters">Character List</Link>
+          <Link to="/characters" style={{textDecoration: 'none', width: '200px', padding: '3px', backgroundColor: '#111E6C', color: 'white'}}>Character List</Link>
         </div>
       </LinkContainer>
     </header>
